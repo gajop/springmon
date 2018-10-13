@@ -10,5 +10,5 @@ SpringRTS file monitor and autoreloader
 - [spring-launcher](https://github.com/gajop/spring-launcher/)
 
 ## Install
-1. Obtain the repository either by adding it as a git submodule or by copying the entire structure in to your Spring game folder. Put it anywhere (although /libs is suggested and used by default).
-2. Copy the file ui_chonsole_load.lua to the luaui/widgets and luarules/gadgets folders and modify the CHONSOLE_FOLDER path.
+1. Obtain the repository either by adding it as a git submodule or by copying the entire structure in to your Spring game folder. Put it anywhere (although `/libs` is suggested and used by default).
+2. Copy the file `api_springmon_loader.lua` to the `luaui/widgets` folder and modify the SPRINGMON_DIR path as necessary.
