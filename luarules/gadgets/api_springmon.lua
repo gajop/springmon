@@ -34,6 +34,8 @@ else
 -- Unsynced
 ----------------------------
     function gadget:Initialize()
+        if not Script.LuaUI(registerGadgetEvent) then return end
+
         local registerGadgetEvent = COMM_EVENTS.REGISTER_GADGET
         gadgetHandler:AddSyncAction(registerGadgetEvent,
             function (_, vfsFilePath)

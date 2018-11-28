@@ -24,7 +24,7 @@ local function TrackFiles()
             vfsFilePath = vfsFilePath:lower()
             local absPath = VFS.GetFileAbsolutePath(vfsFilePath)
             local archiveName = VFS.GetArchiveContainingFile(vfsFilePath)
-            if archiveName == Game.gameName then
+            if archiveName == (Game.gameName .. " " .. Game.gameVersion) then
                 Spring.Log(LOG_SECTION, LOG.NOTICE,
                     'Watching: ' .. tostring(vfsFilePath))
                 WG.Connector.Send("WatchFile", {
@@ -43,6 +43,12 @@ end
 local fileContextMap = {}
 
 function widget:Initialize()
+    if not WG.Connector or not WG.Connector.enabled then
+        Spring.Log(LOG_SECTION, LOG.NOTICE, "Disabling springmon as the connector is also disabled.")
+        widgetHandler:RemoveWidget(self)
+        return
+    end
+
     local addonPathToName = LoadAddonList()
     for vfsFilePath, _ in pairs(addonPathToName) do
         fileContextMap[vfsFilePath] = {

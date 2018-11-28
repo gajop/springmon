@@ -25,7 +25,11 @@ end
 
 local function GenerateAddonPathToNameMap(addonList)
     for name, addon in pairs(addonList) do
-        local vfsFilePath = addon.filename:lower()
+        -- Spring.Echo(addon)
+        -- for k, v in pairs(addon) do
+        --     Spring.Echo(k, v)
+        -- end
+        local vfsFilePath = (addon.filename or addon.filepath):lower()
         addonPathToName[vfsFilePath] = name
         -- local absPath = VFS.GetFileAbsolutePath(vfsFilePath)
         -- local archiveName = VFS.GetArchiveContainingFile(vfsFilePath)
