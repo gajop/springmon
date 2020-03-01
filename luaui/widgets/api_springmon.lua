@@ -45,7 +45,7 @@ local function TrackVFSDir(vfsDir, anyFile)
 		function(vfsFilePath)
 			vfsFilePath = vfsFilePath:lower()
 			local absPath = VFS.GetFileAbsolutePath(vfsFilePath)
-			if  absPath == nil then
+			if absPath == nil then
 				return
 			end
 			local archiveName = VFS.GetArchiveContainingFile(vfsFilePath)
