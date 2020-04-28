@@ -6,7 +6,7 @@ SpringRTS file monitor and autoreloader
 
 ## Dependencies
 - Spring 104.x+
-- [spring-wrapper-connector](https://github.com/gajop/spring-wrapper-connector)
+- [spring-wrapper-connector](https://github.com/gajop/spring-launcher-lib)
 - [spring-launcher](https://github.com/gajop/spring-launcher/)
 
 ## Install
